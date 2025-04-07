@@ -4,7 +4,7 @@ const Header = ({ text, bgColor, color }) => {
     return (
         <header style={{ backgroundColor:  bgColor, color: color}}>
             <div className='container'>
-                <h2>{text}</h2>
+                <h1>{text}</h1>
             </div>
         </header>
     )

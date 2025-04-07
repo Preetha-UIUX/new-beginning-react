@@ -2,6 +2,7 @@ import './App.css'
 import Counter from './components/Counter'
 import Greetings from './components/Greetings'
 import LikeButton from './components/LikeButton'
+import TodoList from './components/TodoList'
 import UserCard from './components/UserCard'
 import { Heart, Star } from 'lucide-react'
 
@@ -40,6 +41,12 @@ function App() {
             <LikeButton icon={<Heart className='w-5 h-5'/>} name="Like"/>
             <LikeButton icon={<Star className='w-5 h-5'/>} name="Favorite"/>
           </div>
+        </div>
+
+        {/* Example 5: Todo List with CRUD Operations */}
+        <div className="bg-white p-6 rounded-lg shadow-md">
+          <h2 className="text-xl font-bold mb-4">1. Todo List (CRUD Operations)</h2>
+          <TodoList />
         </div>
       </div>
     </div>
