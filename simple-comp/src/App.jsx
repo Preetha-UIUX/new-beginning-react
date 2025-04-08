@@ -2,11 +2,21 @@ import './App.css'
 import Counter from './components/Counter'
 import Greetings from './components/Greetings'
 import LikeButton from './components/LikeButton'
+import NotificationBadge from './components/NotificationBadge'
+import SearchList from './components/SearchList'
+import ThemeToggle from './components/ThemeToggle'
 import TodoList from './components/TodoList'
 import UserCard from './components/UserCard'
-import { Heart, Star } from 'lucide-react'
+import { Heart, Star, Search, ShoppingCart } from 'lucide-react'
 
 function App() {
+
+  const items = [
+    { id: 1, name: 'Apple', category: 'Fruit' },
+    { id: 2, name: 'Banana', category: 'Fruit' },
+    { id: 3, name: 'Carrot', category: 'Vegetable' },
+    { id: 4, name: 'Broccoli', category: 'Vegetable' },
+  ]
 
   return (
     <div className="min-h-screen bg-gray-100 p-8">
@@ -45,8 +55,26 @@ function App() {
 
         {/* Example 5: Todo List with CRUD Operations */}
         <div className="bg-white p-6 rounded-lg shadow-md">
-          <h2 className="text-xl font-bold mb-4">1. Todo List (CRUD Operations)</h2>
+          <h2 className="text-xl font-bold mb-4">5. Todo List (CRUD Operations)</h2>
           <TodoList />
+        </div>
+
+        {/* Example 6: Searchable List with Filtering */}
+        <div className="bg-white p-6 rounded-lg shadow-md">
+          <h2 className="text-xl font-bold mb-4">6. Searchable List with Filtering</h2>
+            <SearchList items={items} icon={<Search className="w-5 h-5" />}/>
+        </div>
+
+        {/* Example 7: Notification Badge with Counter */}
+        <div className="bg-white p-6 rounded-lg shadow-md">
+          <h2 className="text-xl font-bold mb-4">7. Notification Badge with Counter</h2>
+          <NotificationBadge icon={ <ShoppingCart className="w-6 h-6"/> } count={5}/>
+        </div>
+
+        {/* Example 8: Notification Badge with Counter */}
+        <div className="bg-white p-6 rounded-lg shadow-md">
+          <h2 className="text-xl font-bold mb-4">8. Theme Toggle with Context</h2>
+          <ThemeToggle />
         </div>
       </div>
     </div>
