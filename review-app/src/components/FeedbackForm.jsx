@@ -5,7 +5,7 @@ import Button from './shared/Button'
 const FeedbackForm = ({ handleAdd, feedbackEdit, updateFeedback }) => {
   const [text, setText] = useState('');
   const [message, setMessage] = useState('');
-  const [disabled, setIsDisabled] = useState(true)
+  const [disabled, setIsDisabled] = useState(false)
 
 
   // useEffect to set the text when the feedbackEdit is true

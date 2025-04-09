@@ -1,3 +1,4 @@
+import { createContext, useState } from 'react'
 import './App.css'
 import Counter from './components/Counter'
 import Greetings from './components/Greetings'
@@ -9,7 +10,11 @@ import TodoList from './components/TodoList'
 import UserCard from './components/UserCard'
 import { Heart, Star, Search, ShoppingCart } from 'lucide-react'
 
+export const ThemeContext = createContext();
+
 function App() {
+
+  const [isDark, setIsDark] = useState(false);
 
   const items = [
     { id: 1, name: 'Apple', category: 'Fruit' },
@@ -19,6 +24,10 @@ function App() {
   ]
 
   return (
+    <ThemeContext.Provider value={{
+      isDark,
+      setIsDark
+    }}>
     <div className="min-h-screen bg-gray-100 p-8">
       <div className="max-w-4xl mx-auto space-y-8">
 
@@ -78,6 +87,7 @@ function App() {
         </div>
       </div>
     </div>
+    </ThemeContext.Provider>
   )
 }
 

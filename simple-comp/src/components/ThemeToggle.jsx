@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import { Sun, Moon } from 'lucide-react';
+import { ThemeContext } from '../App'
 
 const ThemeToggle = () => {
-    const [isDark, setIsDark] = useState(false);
+    const {isDark, setIsDark} = useContext(ThemeContext)
 
     return (
       <div className={`p-4 rounded-lg ${isDark ? 'bg-gray-800' : 'bg-gray-100'}`}>
