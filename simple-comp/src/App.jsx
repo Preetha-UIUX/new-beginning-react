@@ -9,6 +9,8 @@ import ThemeToggle from './components/ThemeToggle'
 import TodoList from './components/TodoList'
 import UserCard from './components/UserCard'
 import { Heart, Star, Search, ShoppingCart } from 'lucide-react'
+import UseReference from './components/UseReference'
+import UseMemoHook from './components/UseMemoHook'
 
 export const ThemeContext = createContext();
 
@@ -80,10 +82,22 @@ function App() {
           <NotificationBadge icon={ <ShoppingCart className="w-6 h-6"/> } count={5}/>
         </div>
 
-        {/* Example 8: Notification Badge with Counter */}
+        {/* Example 8: Theme Toggle */}
         <div className="bg-white p-6 rounded-lg shadow-md">
           <h2 className="text-xl font-bold mb-4">8. Theme Toggle with Context</h2>
           <ThemeToggle />
+        </div>
+
+        {/* Example 9: UseRef Hook */}
+        <div className="bg-white p-6 rounded-lg shadow-md">
+          <h2 className="text-xl font-bold mb-4">9. UseRef Hook</h2>
+          <UseReference />
+        </div>
+
+        {/* Example 10: UseMemo Hook */}
+        <div className="bg-white p-6 rounded-lg shadow-md">
+          <h2 className="text-xl font-bold mb-4">10. UseMemo Hook</h2>
+          <UseMemoHook />
         </div>
       </div>
     </div>

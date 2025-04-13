@@ -7,6 +7,9 @@ const Header = ({ text, bgColor, color }) => {
 
   const {theme, toggleTheme} = useContext(ThemeContext)
 
+  console.log('Theme from context:', theme);
+  
+
   const themeStyle = {
     header: {
       backgroundColor: theme === 'Light' ? '#fff' : bgColor,

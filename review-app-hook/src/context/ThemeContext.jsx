@@ -1,6 +1,7 @@
 import { createContext, useState } from "react";
 
 const ThemeContext = createContext();
+console.log('ThemeContext', ThemeContext);
 
 
 export const ThemeProvider = ({children}) => {
