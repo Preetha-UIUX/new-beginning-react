@@ -1,6 +1,11 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { setUsers } from '../slice/UserSlice'
 
 const Home = () => {
+
+  const dispatch = useDispatch()
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -20,6 +25,11 @@ const Home = () => {
   }
 
   console.log('formData',formData);
+
+  const addUser = (e) => {
+    e.preventDefault()
+    dispatch(setUsers(formData))
+  }
   
   return (
     <div>
@@ -41,7 +51,7 @@ const Home = () => {
         <input name='contact' type='number' value={formData.contact} onChange={handleInputChange}/>
       </form>
 
-      <button type='submit'>Add</button>
+      <button type='submit' onClick={addUser}>Add</button>
     </div>
   )
 }
